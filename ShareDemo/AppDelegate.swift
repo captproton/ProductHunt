@@ -50,19 +50,33 @@ extension AppDelegate {
                      open url: URL,
                      options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        let userDefaults = UserDefaults(suiteName: "group.ShareDemo.SahreDemoExtension")
+        let userDefaults = UserDefaults(suiteName: "group.test.DemoShareExtensiontest.ShareExtension")
+        if let img = userDefaults?.object(forKey: "image") as? UIImage{
+            
+        }
+        if let text = userDefaults?.object(forKey: "text") as? String{
+            
+        }
+        if let url = userDefaults?.object(forKey: "url") as? String{
+            
+        }
+        
+        
         if let key = url.absoluteString.components(separatedBy: "//").last,
-            let sharedArray = userDefaults?.object(forKey: "color") as? Data {
+            let sharedArray = userDefaults?.object(forKey: "image") as? Data {
             
             
             
             let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
             let homeVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-            let imgv = UIImage(data: sharedArray)!
+            
             
             let navVC = storyboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
             
             navVC.viewControllers = [homeVC]
+            if let img = UIImage(data: sharedArray){
+                homeVC.imageToShow = img
+            }
             self.window?.rootViewController = navVC
             self.window?.makeKeyAndVisible()
             
