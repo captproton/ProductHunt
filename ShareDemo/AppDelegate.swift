@@ -44,3 +44,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    
+    func application(_ app: UIApplication,
+                     open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        let userDefaults = UserDefaults(suiteName: "group.ShareDemo.SahreDemoExtension")
+        if let key = url.absoluteString.components(separatedBy: "//").last,
+            let sharedArray = userDefaults?.object(forKey: "color") as? Data {
+            
+            
+            
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let homeVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            let imgv = UIImage(data: sharedArray)!
+            
+            let navVC = storyboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+            
+            navVC.viewControllers = [homeVC]
+            self.window?.rootViewController = navVC
+            self.window?.makeKeyAndVisible()
+            
+            return true
+        }
+        
+        return false
+    }
+    
+}

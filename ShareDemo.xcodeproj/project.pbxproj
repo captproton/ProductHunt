@@ -12,7 +12,34 @@
 		808122B322B2C7280042E9E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 808122B122B2C7280042E9E1 /* Main.storyboard */; };
 		808122B522B2C72D0042E9E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 808122B422B2C72D0042E9E1 /* Assets.xcassets */; };
 		808122B822B2C72D0042E9E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 808122B622B2C72D0042E9E1 /* LaunchScreen.storyboard */; };
+		808122C622B2C74B0042E9E1 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808122C522B2C74B0042E9E1 /* ShareViewController.swift */; };
+		808122C922B2C74B0042E9E1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 808122C722B2C74B0042E9E1 /* MainInterface.storyboard */; };
+		808122CD22B2C74B0042E9E1 /* SahreDemoExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 808122C322B2C74B0042E9E1 /* SahreDemoExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		808122CB22B2C74B0042E9E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 808122A222B2C7280042E9E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 808122C222B2C74B0042E9E1;
+			remoteInfo = SahreDemoExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		808122D122B2C74B0042E9E1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				808122CD22B2C74B0042E9E1 /* SahreDemoExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		808122AA22B2C7280042E9E1 /* ShareDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +49,23 @@
 		808122B422B2C72D0042E9E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		808122B722B2C72D0042E9E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		808122B922B2C72D0042E9E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		808122C322B2C74B0042E9E1 /* SahreDemoExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SahreDemoExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		808122C522B2C74B0042E9E1 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		808122C822B2C74B0042E9E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		808122CA22B2C74B0042E9E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		808122D222B2C75B0042E9E1 /* ShareDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareDemo.entitlements; sourceTree = "<group>"; };
+		808122D322B2C7620042E9E1 /* SahreDemoExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SahreDemoExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		808122A722B2C7280042E9E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		808122C022B2C74B0042E9E1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				808122AC22B2C7280042E9E1 /* ShareDemo */,
+				808122C422B2C74B0042E9E1 /* SahreDemoExtension */,
 				808122AB22B2C7280042E9E1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				808122AA22B2C7280042E9E1 /* ShareDemo.app */,
+				808122C322B2C74B0042E9E1 /* SahreDemoExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,6 +96,7 @@
 		808122AC22B2C7280042E9E1 /* ShareDemo */ = {
 			isa = PBXGroup;
 			children = (
+				808122D222B2C75B0042E9E1 /* ShareDemo.entitlements */,
 				808122AD22B2C7280042E9E1 /* AppDelegate.swift */,
 				808122AF22B2C7280042E9E1 /* ViewController.swift */,
 				808122B122B2C7280042E9E1 /* Main.storyboard */,
@@ -62,6 +105,17 @@
 				808122B922B2C72D0042E9E1 /* Info.plist */,
 			);
 			path = ShareDemo;
+			sourceTree = "<group>";
+		};
+		808122C422B2C74B0042E9E1 /* SahreDemoExtension */ = {
+			isa = PBXGroup;
+			children = (
+				808122D322B2C7620042E9E1 /* SahreDemoExtension.entitlements */,
+				808122C522B2C74B0042E9E1 /* ShareViewController.swift */,
+				808122C722B2C74B0042E9E1 /* MainInterface.storyboard */,
+				808122CA22B2C74B0042E9E1 /* Info.plist */,
+			);
+			path = SahreDemoExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,15 +128,34 @@
 				808122A622B2C7280042E9E1 /* Sources */,
 				808122A722B2C7280042E9E1 /* Frameworks */,
 				808122A822B2C7280042E9E1 /* Resources */,
+				808122D122B2C74B0042E9E1 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				808122CC22B2C74B0042E9E1 /* PBXTargetDependency */,
 			);
 			name = ShareDemo;
 			productName = ShareDemo;
 			productReference = 808122AA22B2C7280042E9E1 /* ShareDemo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		808122C222B2C74B0042E9E1 /* SahreDemoExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 808122CE22B2C74B0042E9E1 /* Build configuration list for PBXNativeTarget "SahreDemoExtension" */;
+			buildPhases = (
+				808122BF22B2C74B0042E9E1 /* Sources */,
+				808122C022B2C74B0042E9E1 /* Frameworks */,
+				808122C122B2C74B0042E9E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SahreDemoExtension;
+			productName = SahreDemoExtension;
+			productReference = 808122C322B2C74B0042E9E1 /* SahreDemoExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -96,6 +169,19 @@
 				TargetAttributes = {
 					808122A922B2C7280042E9E1 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					808122C222B2C74B0042E9E1 = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -113,6 +199,7 @@
 			projectRoot = "";
 			targets = (
 				808122A922B2C7280042E9E1 /* ShareDemo */,
+				808122C222B2C74B0042E9E1 /* SahreDemoExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +215,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		808122C122B2C74B0042E9E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				808122C922B2C74B0042E9E1 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,7 +235,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		808122BF22B2C74B0042E9E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				808122C622B2C74B0042E9E1 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		808122CC22B2C74B0042E9E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 808122C222B2C74B0042E9E1 /* SahreDemoExtension */;
+			targetProxy = 808122CB22B2C74B0042E9E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		808122B122B2C7280042E9E1 /* Main.storyboard */ = {
@@ -157,6 +268,14 @@
 				808122B722B2C72D0042E9E1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		808122C722B2C74B0042E9E1 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				808122C822B2C74B0042E9E1 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -281,8 +400,11 @@
 		808122BD22B2C72D0042E9E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ShareDemo/ShareDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3FU3X3S2FU;
 				INFOPLIST_FILE = ShareDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,8 +420,11 @@
 		808122BE22B2C72D0042E9E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ShareDemo/ShareDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3FU3X3S2FU;
 				INFOPLIST_FILE = ShareDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -307,6 +432,46 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = JS.ShareDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		808122CF22B2C74B0042E9E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SahreDemoExtension/SahreDemoExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3FU3X3S2FU;
+				INFOPLIST_FILE = SahreDemoExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = JS.ShareDemo.SahreDemoExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		808122D022B2C74B0042E9E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SahreDemoExtension/SahreDemoExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3FU3X3S2FU;
+				INFOPLIST_FILE = SahreDemoExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = JS.ShareDemo.SahreDemoExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -329,6 +494,15 @@
 			buildConfigurations = (
 				808122BD22B2C72D0042E9E1 /* Debug */,
 				808122BE22B2C72D0042E9E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		808122CE22B2C74B0042E9E1 /* Build configuration list for PBXNativeTarget "SahreDemoExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				808122CF22B2C74B0042E9E1 /* Debug */,
+				808122D022B2C74B0042E9E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
