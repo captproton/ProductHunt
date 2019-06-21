@@ -15,6 +15,7 @@
 		808122C622B2C74B0042E9E1 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808122C522B2C74B0042E9E1 /* ShareViewController.swift */; };
 		808122C922B2C74B0042E9E1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 808122C722B2C74B0042E9E1 /* MainInterface.storyboard */; };
 		808122CD22B2C74B0042E9E1 /* SahreDemoExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 808122C322B2C74B0042E9E1 /* SahreDemoExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C623B9E922B778F70072ECD7 /* DeepLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C623B9E822B778F70072ECD7 /* DeepLinkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		808122CA22B2C74B0042E9E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		808122D222B2C75B0042E9E1 /* ShareDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareDemo.entitlements; sourceTree = "<group>"; };
 		808122D322B2C7620042E9E1 /* SahreDemoExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SahreDemoExtension.entitlements; sourceTree = "<group>"; };
+		C623B9E822B778F70072ECD7 /* DeepLinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				808122D222B2C75B0042E9E1 /* ShareDemo.entitlements */,
 				808122AD22B2C7280042E9E1 /* AppDelegate.swift */,
+				C623B9E822B778F70072ECD7 /* DeepLinkManager.swift */,
 				808122AF22B2C7280042E9E1 /* ViewController.swift */,
 				808122B122B2C7280042E9E1 /* Main.storyboard */,
 				808122B422B2C72D0042E9E1 /* Assets.xcassets */,
@@ -232,6 +235,7 @@
 			files = (
 				808122B022B2C7280042E9E1 /* ViewController.swift in Sources */,
 				808122AE22B2C7280042E9E1 /* AppDelegate.swift in Sources */,
+				C623B9E922B778F70072ECD7 /* DeepLinkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +450,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U73EK8T94B;
 				INFOPLIST_FILE = SahreDemoExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -467,7 +471,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U73EK8T94B;
 				INFOPLIST_FILE = SahreDemoExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

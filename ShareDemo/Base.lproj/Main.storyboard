@@ -22,19 +22,31 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nS4-Hd-Uwu">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4fX-tb-beP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0Be-8d-rnw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nS4-Hd-Uwu" secondAttribute="trailing" id="4PM-mM-0pw"/>
+                            <constraint firstItem="nS4-Hd-Uwu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="C05-4j-EIG"/>
+                            <constraint firstItem="nS4-Hd-Uwu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Y7W-0x-9Sq"/>
                             <constraint firstItem="4fX-tb-beP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d93-pI-7PF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4fX-tb-beP" secondAttribute="trailing" id="hbZ-aT-2nz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4fX-tb-beP" secondAttribute="bottom" id="taS-e7-fvi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nS4-Hd-Uwu" secondAttribute="bottom" id="ziX-cK-aPv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="WHo-V0-bI3"/>
                     <connections>
                         <outlet property="imgv" destination="4fX-tb-beP" id="Mdc-8h-AeZ"/>
+                        <outlet property="txtview" destination="nS4-Hd-Uwu" id="SDQ-md-fl7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

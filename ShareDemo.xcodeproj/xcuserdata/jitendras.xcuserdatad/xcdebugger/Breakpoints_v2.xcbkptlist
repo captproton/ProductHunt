@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SahreDemoExtension/ShareViewController.swift"
-            timestampString = "582207287.164569"
+            timestampString = "582458330.721746"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ShareDemo/AppDelegate.swift"
-            timestampString = "582207287.1650701"
+            filePath = "SahreDemoExtension/ShareViewController.swift"
+            timestampString = "582458330.721814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "application(_:open:options:)"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "shareImage(itemProvider:dispatchGroup:prefs:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ShareDemo/AppDelegate.swift"
-            timestampString = "582207287.1651421"
+            filePath = "ShareDemo/ViewController.swift"
+            timestampString = "582458330.7218651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "application(_:open:options:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "manageViewsAccoringToDeepLinktype()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ShareDemo/AppDelegate.swift"
-            timestampString = "582207287.165205"
+            filePath = "ShareDemo/ViewController.swift"
+            timestampString = "582458330.72224"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "application(_:open:options:)"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "manageViewsAccoringToDeepLinktype()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -73,13 +73,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ShareDemo/AppDelegate.swift"
-            timestampString = "582207287.165262"
+            filePath = "ShareDemo/ViewController.swift"
+            timestampString = "582458330.722497"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "application(_:open:options:)"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "manageViewsAccoringToDeepLinktype()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,13 +89,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ShareDemo/AppDelegate.swift"
-            timestampString = "582207287.165308"
+            filePath = "ShareDemo/ViewController.swift"
+            timestampString = "582458330.722749"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "application(_:open:options:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "manageViewsAccoringToDeepLinktype()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShareDemo/ViewController.swift"
+            timestampString = "582458330.722999"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "manageViewsAccoringToDeepLinktype()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShareDemo/ViewController.swift"
+            timestampString = "582458330.723248"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "deeplinkType"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShareDemo/DeepLinkManager.swift"
+            timestampString = "582458330.723526"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "proceedToDeeplink()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,12 +154,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SahreDemoExtension/ShareViewController.swift"
-            timestampString = "582207287.165355"
+            timestampString = "582458330.723577"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "shareText(itemProvider:dispatchGroup:prefs:)"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

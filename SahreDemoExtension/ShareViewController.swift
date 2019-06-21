@@ -61,6 +61,9 @@ class ShareViewController: SLComposeServiceViewController {
                     if itemProvider.isText{
                         self.shareText(itemProvider: itemProvider, dispatchGroup: group, prefs: prefs)
                     }
+                    if itemProvider.isVideo{
+                        self.shareVideo(itemProvider: itemProvider, dispatchGroup: group, prefs: prefs)
+                    }
                 }
             }
             group.notify(queue: DispatchQueue.main) {
@@ -105,18 +108,18 @@ extension ShareViewController{
         prefs.removeObject(forKey: "image")
         prefs.removeObject(forKey: "url")
         prefs.removeObject(forKey: "text")
+        prefs.removeObject(forKey: "video")
     }
     func shareURL(itemProvider:NSItemProvider,dispatchGroup:DispatchGroup, prefs:UserDefaults) {
         itemProvider.loadItem(forTypeIdentifier: kUTTypeURL as String, options: nil) { data, error in
             if error == nil {
                 var urlString = ""
-                if itemProvider.isURL {
-                    itemProvider.loadItem(forTypeIdentifier: "public.url", options: nil, completionHandler: { (results, error) in
-                        let url = results as! URL?
-                        urlString = url!.absoluteString
-                        prefs.set(urlString, forKey: "url")
-                    })
-                }
+                self.typeOfData = "url"
+                itemProvider.loadItem(forTypeIdentifier: "public.url", options: nil, completionHandler: { (results, error) in
+                    let url = results as! URL?
+                    urlString = url!.absoluteString
+                    prefs.set(urlString.data(using: String.Encoding.utf8), forKey: "url")
+                })
             } else {
                 NSLog("\(String(describing: error))")
             }
@@ -140,6 +143,7 @@ extension ShareViewController{
                     return
                 }
                 prefs.set(compressedImageData, forKey: "image")
+                self.typeOfData = "image"
             }else{
                 print("bad share data")
             }
@@ -149,91 +153,101 @@ extension ShareViewController{
     func shareText(itemProvider:NSItemProvider,dispatchGroup:DispatchGroup, prefs:UserDefaults ) {
         itemProvider.loadItem(forTypeIdentifier: self.contentTypeText, options: nil, completionHandler: { (results, error) in
             let text = results as! String
-            prefs.set(text, forKey: "text")
+            prefs.set(text.data(using: String.Encoding.utf8), forKey: "text")
+            self.typeOfData = "text"
             _ = self.isContentValid()
             dispatchGroup.leave()
         })
     }
     func shareVideo(itemProvider:NSItemProvider,dispatchGroup:DispatchGroup, prefs:UserDefaults ) {
-        itemProvider.loadItem(forTypeIdentifier: "com.apple.quicktime-movie", options: [:]) { (data, error) in
+        itemProvider.loadItem(forTypeIdentifier: kUTTypeMovie as String, options: [:]) { (data, error) in
+            self.encodeVideo(data as! URL, dispatchGroup: dispatchGroup,prefs: prefs)
+            self.typeOfData = "video"
 //            let opts = [AVURLAssetPreferPreciseDurationAndTimingKey : NSNumber(value: false)]
-//            
 //            let urlAsset = AVURLAsset(url: data as! URL, options: opts as? [String : Any])
-//            let second = Int(urlAsset.duration.value / urlAsset.duration.timescale)
-//            
-            
-            
-            
-            dispatchGroup.leave()
+//            let second = Int(Int(urlAsset.duration.value) / Int(urlAsset.duration.timescale))
+            //            dispatchGroup.leave()
         }
     }
-    func dummy(itemProvider:NSItemProvider)  {
-        itemProvider.loadItem(forTypeIdentifier: kUTTypeData as String, options: nil) { data, error in
-            if error == nil {
-                //  Note: "data" may be another type (e.g. Data or UIImage). Casting to URL may fail. Better use switch-statement for other types.
-                //  "screenshot-tool" from iOS11 will give you an UIImage here
-                guard let prefs = UserDefaults(suiteName: "group.test.DemoShareExtensiontest.ShareExtension") else{
-                    return
-                }
-                
-                
-                let url = data as! URL
-                if let imageData = try? Data(contentsOf: url) {
-                    if let prefs = UserDefaults(suiteName: "group.test.DemoShareExtensiontest.ShareExtension") {
-                        prefs.removeObject(forKey: "color")
-                        prefs.set(imageData, forKey: "color")
-                    }
-                }
-                let path = "\(self.docPath)/\(url.pathComponents.last ?? "")"
-                print(">>> sharepath: \(String(describing: url.path))")
-                
-                try? FileManager.default.copyItem(at: url, to: URL(fileURLWithPath: path))
-                let myImage: UIImage?
-                var urlString = ""
-                var textString = ""
-                if itemProvider.isImage{ //Image
-                    switch data {
-                    case let image as UIImage:
-                        myImage = image
-                    case let data as Data:
-                        myImage = UIImage(data: data)
-                    case let url as URL:
-                        myImage = UIImage(contentsOfFile: url.path)
-                    default:
-                        //There may be other cases...
-                        print("Unexpected data:", type(of: data))
-                        myImage = nil
-                    }
-                    if myImage != nil{
-                        prefs.removeObject(forKey: "image")
-                        prefs.set(myImage, forKey: "image")
-                    }
-                }
-                if itemProvider.isVideo {//Video
-                    
-                }
-                if itemProvider.isURL {
-                    itemProvider.loadItem(forTypeIdentifier: self.contentTypeURL, options: nil, completionHandler: { (results, error) in
-                        let url = results as! URL?
-                        urlString = url!.absoluteString
-                        prefs.removeObject(forKey: "url")
-                        prefs.set(urlString, forKey: "url")
-                    })
-                }
-                if itemProvider.isText {
-                    itemProvider.loadItem(forTypeIdentifier: self.contentTypeText, options: nil, completionHandler: { (results, error) in
-                        let text = results as! String
-                        textString = text
-                        prefs.removeObject(forKey: "text")
-                        prefs.set(textString, forKey: "text")
-                        _ = self.isContentValid()
-                    })
-                }
-            } else {
-                NSLog("\(String(describing: error))")
+    func encodeVideo(_ videoURL: URL,dispatchGroup:DispatchGroup,prefs:UserDefaults)  {
+        let avAsset = AVURLAsset(url: videoURL, options: nil)
+        let startDate = Foundation.Date()
+        //Create Export session
+        var exportSession = AVAssetExportSession(asset: avAsset, presetName: AVAssetExportPresetPassthrough)
+        // exportSession = AVAssetExportSession(asset: composition, presetName: mp4Quality)
+        //Creating temp path to save the converted video
+        let documentsDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let myDocumentPath = URL(fileURLWithPath: documentsDirectory).appendingPathComponent("temp.mp4").absoluteString
+        let url = URL(fileURLWithPath: myDocumentPath)
+        
+        let documentsDirectory2 = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0] as URL
+        
+        let filePath = documentsDirectory2.appendingPathComponent("rendered-Video.mp4")
+        deleteFile(filePath)
+        
+        //Check if the file already exists then remove the previous file
+        if FileManager.default.fileExists(atPath: myDocumentPath) {
+            do {
+                try FileManager.default.removeItem(atPath: myDocumentPath)
             }
-//            group.leave()
+            catch let error {
+                print(error)
+            }
         }
 
+        exportSession!.outputURL = filePath
+        exportSession!.outputFileType = AVFileType.mp4
+        exportSession!.shouldOptimizeForNetworkUse = true
+        let start = CMTimeMakeWithSeconds(0.0, preferredTimescale: 0)
+        let range = CMTimeRangeMake(start: start, duration: avAsset.duration)
+        exportSession?.timeRange = range
+        
+        exportSession?.exportAsynchronously(completionHandler: {() -> Void in
+            switch exportSession!.status {
+            case .failed:
+                print("%@",exportSession?.error as Any)
+            case .cancelled:
+                print("Export canceled")
+            case .completed:
+                //Video conversion finished
+                let endDate = Foundation.Date()
+                
+                let time = endDate.timeIntervalSince(startDate)
+                print(time)
+                print("Successful!")
+                print(exportSession?.outputURL)
+                let mediaPath = exportSession?.outputURL?.path as NSString?
+                var videoData:NSData?
+                do {
+                    videoData = try NSData(contentsOf: ((exportSession?.outputURL!)!), options: .mappedIfSafe)
+                }catch{
+                    
+                }
+                if videoData != nil{
+                    prefs.set(videoData, forKey: "video")
+                }
+                dispatchGroup.leave()
+                
+                //self.mediaPath = String(self.exportSession.outputURL!)
+            // self.mediaPath = self.mediaPath.substringFromIndex(7)
+            default:
+                break
+            }
+            
+        })
+        
+        
+    }
+    
+    func deleteFile(_ filePath:URL) {
+        guard FileManager.default.fileExists(atPath: filePath.path) else {
+            return
+        }
+        
+        do {
+            try FileManager.default.removeItem(atPath: filePath.path)
+        }catch{
+            fatalError("Unable to delete file: \(error) : \(#function).")
+        }
     }
 }
