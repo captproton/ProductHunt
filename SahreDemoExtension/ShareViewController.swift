@@ -1,6 +1,6 @@
 //
 //  ShareViewController.swift
-//  SahreDemoExtension
+//  ProductHuntExtension
 //
 //  Created by Jitendra Singh on 13/06/19.
 //  Copyright © 2019 Jitendra Singh. All rights reserved.
@@ -215,7 +215,7 @@ extension ShareViewController{
                 let time = endDate.timeIntervalSince(startDate)
                 print(time)
                 print("Successful!")
-                print(exportSession?.outputURL)
+                print(exportSession?.outputURL as Any)
                 let mediaPath = exportSession?.outputURL?.path as NSString?
                 var videoData:NSData?
                 do {
