@@ -188,7 +188,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 808122A522B2C7280042E9E1 /* Build configuration list for PBXProject "ShareDemo" */;
+			buildConfigurationList = 808122A522B2C7280042E9E1 /* Build configuration list for PBXProject "Product Hunt by Homemaide" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -448,7 +448,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SahreDemoExtension/SahreDemoExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U73EK8T94B;
+				DEVELOPMENT_TEAM = WVBPB459F4;
 				INFOPLIST_FILE = SahreDemoExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -469,7 +469,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SahreDemoExtension/SahreDemoExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U73EK8T94B;
+				DEVELOPMENT_TEAM = WVBPB459F4;
 				INFOPLIST_FILE = SahreDemoExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -488,7 +488,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		808122A522B2C7280042E9E1 /* Build configuration list for PBXProject "ShareDemo" */ = {
+		808122A522B2C7280042E9E1 /* Build configuration list for PBXProject "Product Hunt by Homemaide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				808122BA22B2C72D0042E9E1 /* Debug */,
