@@ -19,7 +19,7 @@ class ShareViewController: SLComposeServiceViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let containerURL = FileManager().containerURL(forSecurityApplicationGroupIdentifier: "group.test.DemoShareExtensiontest.ShareExtension")!
+        let containerURL = FileManager().containerURL(forSecurityApplicationGroupIdentifier: "group.test.ProductHuntExtensiontest.ShareExtension")!
         docPath = "\(containerURL.path)/share"
         
         //  Create directory if not exists
@@ -48,7 +48,7 @@ class ShareViewController: SLComposeServiceViewController {
                 for provider: Any in inputItem.attachments! {
                     let itemProvider = provider as! NSItemProvider
                     group.enter()
-                    guard let prefs = UserDefaults(suiteName: "group.test.DemoShareExtensiontest.ShareExtension") else{
+                    guard let prefs = UserDefaults(suiteName: "group.test.ProductHuntExtensiontest.ShareExtension") else{
                         return
                     }
                     self.removePreviousSavedData(prefs: prefs)
