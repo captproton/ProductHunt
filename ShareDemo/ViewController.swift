@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     func manageViewsAccoringToDeepLinktype() {
-        let userDefaults = UserDefaults(suiteName: "group.test.DemoShareExtensiontest.ShareExtension")
+        let userDefaults = UserDefaults(suiteName: "group.test.ProductHuntExtensiontest.ShareExtension")
         switch self.deeplinkType {
         case .image?:
             if let imgData = userDefaults?.object(forKey: "image") as? Data{
